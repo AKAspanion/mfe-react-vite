@@ -38,7 +38,7 @@ export default () => {
           />
         </svg>
       </div>
-      <div style={{ marginTop: '10px', fontSize: '25px' }}>I'm the remote app</div>
+      <div style={{ marginTop: '10px', fontSize: '25px' }}>I'm the remote react app</div>
       <Counter />
     </div>
   );

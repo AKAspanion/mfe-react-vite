@@ -1,7 +1,7 @@
 const { withNativeFederation, shareAll } = require('@softarc/native-federation/build');
 
 module.exports = withNativeFederation({
-  name: 'remote',
+  name: 'remote-react',
   exposes: {
     './react-app': './src/App.tsx',
   },

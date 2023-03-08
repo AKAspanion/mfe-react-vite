@@ -5,7 +5,7 @@ import './App.css';
 import Counter from './components/Counter';
 
 export default () => {
-  const ReactApp = React.lazy(async () => await loadRemoteModule('remote', './react-app'));
+  const ReactApp = React.lazy(async () => await loadRemoteModule('remote-react', './react-app'));
 
   React.useEffect(() => {
     of('emit')
