@@ -3,6 +3,7 @@ import { createEsBuildAdapter } from '@softarc/native-federation-esbuild';
 import { reactReplacements } from '@softarc/native-federation-esbuild/src/lib/react-replacements';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
+import FullReload from 'vite-plugin-full-reload';
 
 export default defineConfig(async ({ command }) => ({
   server: {
@@ -23,5 +24,6 @@ export default defineConfig(async ({ command }) => ({
       adapter: createEsBuildAdapter({ plugins: [], fileReplacements: reactReplacements.dev }),
     }),
     react(),
+    FullReload(['../remote-react/src/**/*']),
   ],
 }));

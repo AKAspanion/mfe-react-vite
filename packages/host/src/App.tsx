@@ -1,12 +1,10 @@
-import { loadRemoteModule } from '@softarc/native-federation';
 import React from 'react';
 import { of, tap } from 'rxjs';
 import './App.css';
 import Counter from './components/Counter';
+import ReactRemote from './remotes/ReactRemote';
 
 export default () => {
-  const ReactApp = React.lazy(async () => await loadRemoteModule('remote-react', './react-app'));
-
   React.useEffect(() => {
     of('emit')
       .pipe(tap(() => console.log("I'm RxJs from host")))
@@ -38,10 +36,7 @@ export default () => {
           <Counter />
         </div>
       </div>
-
-      <React.Suspense fallback="loading...">
-        <ReactApp />
-      </React.Suspense>
+      <ReactRemote />
     </>
   );
 };
